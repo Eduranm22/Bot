@@ -40,4 +40,18 @@ async def add(ctx, left: int, right: int):
     result = left + right  # Calculate the sum of the two numbers
     await ctx.send(f"La suma de {left} y {right} es: {result}")
 
+@client.command()
+async def commands(ctx):
+    """Muestra todos los comandos disponibles del bot."""
+    help_message = (
+        "**Comandos disponibles:**\n"
+        "`$hello`: Saluda al bot.\n"
+        "`$bye`: Envía un emoji de sonrisa.\n"
+        "`$pass`: Genera una contraseña aleatoria.\n"
+        "`$coin`: Lanza una moneda al aire (cara o cruz).\n"
+        "`$smile`: Genera un emoji al azar.\n"
+        "`$add <num1> <num2>`: Suma dos números.\n"
+    )
+    await ctx.send(help_message)
+
 client.run("SECRET TOKEN")
